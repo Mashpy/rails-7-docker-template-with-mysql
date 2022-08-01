@@ -34,10 +34,29 @@ $ docker-compose run app rails new . --force --database=mysql --skip-bundle
 ```
 $ docker-compose build
 ```
-8. Run - 
+8. Update database details on config/database.yml file.
+```
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: "root"
+  host: mysql
+
+development:
+  <<: *default
+  database: dev
+
+test:
+  <<: *default
+  database: dev
+```
+
+9. Run - 
 ```
 $ docker-compose up
 ```
 
-9. Browse http://localhost:3000
+10. Browse http://localhost:3000
 ![Ruby on rails 7.0.3 docker with mysql](https://i.ibb.co/Z19FNSJ/Screenshot-2022-07-30-at-9-11-24-PM.png) 
