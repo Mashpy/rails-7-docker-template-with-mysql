@@ -32,7 +32,7 @@ FROM  ruby:3.1.2-slim
 ```
 7. Build the docker image -
 ```
-$ docker-compose build
+ docker-compose build
 ```
 8. Update database details on config/database.yml file.
 ```
